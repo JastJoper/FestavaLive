@@ -1,0 +1,41 @@
+﻿@model AcunMedyaFestavaLive.Entities.Artist
+@{
+    ViewBag.Title = "CreateArtist";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Sanatçı Bilgileri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Sanatçı Bilgisi Ekleme</div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <label>Resim Url</label>
+                            @Html.TextAreaFor(x => x.ImageUrl, new { @class = "form-control" })
+                            <br />
+                            <label>İsim Soyisim</label>
+                            @Html.TextAreaFor(x => x.NameSurname, new { @class = "form-control" })
+                            <br />
+                            <label>Etkinlik Tarihi</label>
+                            @Html.TextAreaFor(x => x.Date, new { @class = "form-control" })
+                            <br />
+                            <label>Etkinlik Türü</label>
+                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+                            <br />
+                            <label>Etkinlik Açıklaması </label>
+                            @Html.TextAreaFor(x => x.Description2, new { @class = "form-control" })
+                            <br />
+                            <button class="btn btn-primary">Sanatçı Bilgisini Ekle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

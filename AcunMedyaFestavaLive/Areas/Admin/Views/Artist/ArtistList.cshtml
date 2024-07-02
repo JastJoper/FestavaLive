@@ -1,0 +1,56 @@
+﻿@model List<AcunMedyaFestavaLive.Entities.Artist>
+@{
+    ViewBag.Title = "ArtistList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Sanatçı Bilgileri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Sanatçı Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Sanatçı Bilgisi İşlemleri
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Resim</th>
+                                    <th>İsim Soyisim</th>
+                                    <th>Etkinlik Günü</th>
+                                    <th>Etkinlik Türü</th>
+                                    <th>Açıklama</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.ArtistID</td>
+                                        <td><img src="@item.ImageUrl" style="height:50px; width:50px;"/></td>
+                                        <td>@item.NameSurname</td>
+                                        <td>@item.Date</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.Description2</td>
+                                        <td><a href="/Admin/Artist/DeleteArtist/@item.ArtistID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/Artist/UpdateArtist/@item.ArtistID" class="btn btn-success">Güncelle</a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                        <a href="/Admin/Artist/CreateArtist/" class="btn btn-info">Yeni Sanatçı Girişi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sayfası</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Genel Stiller */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        /* Sidebar Stilleri */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 250px;
+            background-color: #343a40;
+            overflow-y: auto;
+        }
+
+        .scrollbar-inner {
+            padding-bottom: 60px; /* Scrollbar ile ilgili */
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+            .user .photo {
+                width: 50px;
+                height: 50px;
+                overflow: hidden;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+                .user .photo img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            .user .info {
+                flex: 1;
+            }
+
+                .user .info a {
+                    color: #fff;
+                }
+
+                .user .info .user-level {
+                    display: block;
+                    font-size: 0.8rem;
+                }
+
+        .nav {
+            margin-top: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .nav-item {
+            margin-bottom: 5px;
+        }
+
+            .nav-item a {
+                display: flex;
+                align-items: center;
+                color: #ccc;
+                padding: 10px 20px;
+                transition: all 0.3s ease;
+            }
+
+                .nav-item a:hover {
+                    background-color: #454d55;
+                    color: #fff;
+                    text-decoration: none;
+                }
+
+                .nav-item a i {
+                    margin-right: 10px;
+                }
+
+                .nav-item a p {
+                    margin: 0;
+                    flex: 1;
+                }
+
+        .badge-count {
+            background-color: #dc3545;
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: auto;
+        }
+
+        /* Collapse Link */
+        .link-collapse {
+            color: #ccc;
+        }
+
+            .link-collapse:hover {
+                color: #fff;
+                text-decoration: none;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="scrollbar-inner sidebar-wrapper">
+            <div class="user">
+                <div class="photo">
+                    <img src="~/Templates/Ready-Bootstrap-Dashboard-master/assets/img/profile2.jpg/">
+                </div>
+                <div class="info">
+                    <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                        <span>
+                            @Session["Hüseyin Özbey"]
+                            <span class="user-level">@Session["OperationClaimName"]</span>
+                            <span class="caret"></span>
+                        </span>
+                    </a>
+                    <div class="clearfix"></div>
+
+                    <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+                        <ul class="nav">
+                            <li>
+                                <a href="#profile">
+                                    <span class="link-collapse">Profilim</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#edit">
+                                    <span class="link-collapse">Profili Düzenle</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#settings">
+                                    <span class="link-collapse">Ayarlar</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="/Admin/Ticket/TicketList/">
+                        <i class="la la-ticket"></i>
+                        <p>Satılan Biletler</p>
+                        <span class="badge badge-count">4</span> <!-- Örnek badge count -->
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Admin/Ticket/PassiveTicketList/">
+                        <i class="la la-ticket"></i>
+                        <p>Geçmiş</p>
+                        <span class="badge badge-count">2</span> <!-- Örnek badge count -->
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Admin/Artist/ArtistList/">
+                        <i class="la la-star"></i>
+                        <p>Sanatçılar</p>
+                        <span class="badge badge-count">3</span> <!-- Örnek badge count -->
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Admin/User/UserList/">
+                        <i class="la la-user"></i>
+                        <p>Kullanıcılar</p>
+                        <span class="badge badge-count">5</span> <!-- Örnek badge count -->
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

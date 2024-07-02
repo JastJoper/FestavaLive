@@ -1,0 +1,924 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB12D583-FEB4-4CC7-8F5F-1586D9EC60ED}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AcunMedyaFestavaLive</RootNamespace>
+    <AssemblyName>AcunMedyaFestavaLive</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44370</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.3.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.3.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArtistController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LayoutController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TicketController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserLoginModel.cs" />
+    <Compile Include="Areas\Member\Controllers\layoutController.cs" />
+    <Compile Include="Areas\Member\Controllers\MyTicketController.cs" />
+    <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
+    <Compile Include="Areas\Member\Models\UserTicketViewModel.cs" />
+    <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DataAccess\UserDal.cs" />
+    <Compile Include="Entities\Artist.cs" />
+    <Compile Include="Entities\Context.cs" />
+    <Compile Include="Entities\Feature.cs" />
+    <Compile Include="Entities\Message.cs" />
+    <Compile Include="Entities\OperationClaim.cs" />
+    <Compile Include="Entities\Ticket.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserOperationClaim.cs" />
+    <Compile Include="Entities\UserTicket.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404221839364_mig1.cs" />
+    <Compile Include="Migrations\202404221839364_mig1.designer.cs">
+      <DependentUpon>202404221839364_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405061723391_mig2.cs" />
+    <Compile Include="Migrations\202405061723391_mig2.designer.cs">
+      <DependentUpon>202405061723391_mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406111436095_mig3.cs" />
+    <Compile Include="Migrations\202406111436095_mig3.designer.cs">
+      <DependentUpon>202406111436095_mig3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406112038223_mig4.cs" />
+    <Compile Include="Migrations\202406112038223_mig4.designer.cs">
+      <DependentUpon>202406112038223_mig4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406112151134_mig5.cs" />
+    <Compile Include="Migrations\202406112151134_mig5.designer.cs">
+      <DependentUpon>202406112151134_mig5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406192338596_mig6.cs" />
+    <Compile Include="Migrations\202406192338596_mig6.designer.cs">
+      <DependentUpon>202406192338596_mig6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406192340579_mig7.cs" />
+    <Compile Include="Migrations\202406192340579_mig7.designer.cs">
+      <DependentUpon>202406192340579_mig7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406200113560_mig8.cs" />
+    <Compile Include="Migrations\202406200113560_mig8.designer.cs">
+      <DependentUpon>202406200113560_mig8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406201430086_mig9.cs" />
+    <Compile Include="Migrations\202406201430086_mig9.designer.cs">
+      <DependentUpon>202406201430086_mig9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406201439468_mig10.cs" />
+    <Compile Include="Migrations\202406201439468_mig10.designer.cs">
+      <DependentUpon>202406201439468_mig10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406201623031_mig11.cs" />
+    <Compile Include="Migrations\202406201623031_mig11.designer.cs">
+      <DependentUpon>202406201623031_mig11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406280651154_AddImageUrlToTicket.cs" />
+    <Compile Include="Migrations\202406280651154_AddImageUrlToTicket.Designer.cs">
+      <DependentUpon>202406280651154_AddImageUrlToTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Ticket\TicketList.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\CreateTicket.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\UpdateTicket.cshtml" />
+    <Content Include="Areas\Member\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\PartialHead.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\PartialNavbar.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\PartialSidebar.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\PartialScript.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\TicketDetail.cshtml" />
+    <Content Include="Areas\Member\Views\MyTicket\MyTicketList.cshtml" />
+    <Content Include="Areas\Member\Views\Shared\_MemberLayout.cshtml" />
+    <Content Include="Areas\Member\Views\layout\PartialHead.cshtml" />
+    <Content Include="Areas\Member\Views\layout\PartialNavbar.cshtml" />
+    <Content Include="Areas\Member\Views\layout\PartialSidebar.cshtml" />
+    <Content Include="Areas\Member\Views\layout\PartialScript.cshtml" />
+    <Content Include="Areas\Member\Views\MyTicket\TicketList.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\MessageDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\User\UserList.cshtml" />
+    <Content Include="Areas\Admin\Views\Artist\ArtistList.cshtml" />
+    <Content Include="Areas\Admin\Views\Artist\CreateArtist.cshtml" />
+    <Content Include="Areas\Admin\Views\Artist\UpdateArtist.cshtml" />
+    <Content Include="Areas\Member\Views\MyTicket\TicketDetail.cshtml" />
+    <Content Include="Areas\Member\Views\MyTicket\BuyTicket.cshtml" />
+    <Content Include="Areas\Member\Views\MyTicket\PastMyTicketList.cshtml" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\bootstrap-grid.css" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\bootstrap-reboot.css" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\bootstrap.css" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\css\azzara.css" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\css\azzara.min.css" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\css\bootstrap.min.css" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\css\demo.css" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\css\fonts.css" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\flaticon\flaticon.css" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\flaticon\flaticon.html" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\flaticon\Flaticon.svg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-brands-400.svg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-regular-400.svg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-solid-900.svg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\arashmil.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\bg-404.jpeg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\blogpost.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\chadengle.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\examples\logoinvoice.svg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\examples\product1.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\examples\product2.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\examples\product3.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\examples\product4.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\examples\product5.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\examples\product6.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\examples\product7.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\examples\product8.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ad.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ae.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\af.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ag.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ai.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\al.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\am.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\an.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ao.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ar.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\as.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\at.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\au.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\aw.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ax.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\az.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ba.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bb.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bd.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\be.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bf.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bg.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bh.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bi.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bj.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bm.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bn.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bo.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\br.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bs.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bt.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bv.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bw.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\by.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\bz.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ca.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\catalonia.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cc.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cd.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cf.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cg.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ch.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ci.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ck.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cl.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cm.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cn.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\co.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cr.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cs.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cu.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cv.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cx.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cy.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\cz.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\de.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\dj.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\dk.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\dm.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\do.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\dz.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ec.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ee.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\eg.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\eh.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\england.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\er.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\es.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\et.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\europeanunion.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\fam.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\fi.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\fj.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\fk.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\fm.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\fo.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\fr.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ga.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gb.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gd.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ge.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gf.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gh.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gi.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gl.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gm.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gn.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gp.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gq.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gr.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gs.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gt.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gu.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gw.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\gy.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\hk.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\hm.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\hn.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\hr.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ht.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\hu.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\id.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ie.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\il.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\in.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\io.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\iq.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ir.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\is.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\it.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\jm.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\jo.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\jp.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ke.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\kg.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\kh.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ki.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\km.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\kn.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\kp.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\kr.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\kw.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ky.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\kz.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\la.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\lb.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\lc.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\li.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\lk.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\lr.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ls.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\lt.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\lu.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\lv.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ly.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ma.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mc.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\md.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\me.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mg.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mh.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mk.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ml.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mm.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mn.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mo.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mp.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mq.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mr.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ms.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mt.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mu.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mv.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mw.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mx.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\my.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\mz.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\na.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\nc.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ne.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\nf.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ng.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ni.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\nl.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\no.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\np.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\nr.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\nu.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\nz.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\om.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\pa.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\pe.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\pf.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\pg.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ph.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\pk.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\pl.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\pm.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\pn.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\pr.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ps.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\pt.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\pw.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\py.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\qa.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\re.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\readme.txt" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ro.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\rs.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ru.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\rw.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sa.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sb.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sc.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\scotland.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sd.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\se.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sg.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sh.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\si.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sj.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sk.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sl.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sm.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sn.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\so.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sr.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\st.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sv.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sy.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\sz.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tc.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\td.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tf.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tg.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\th.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tj.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tk.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tl.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tm.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tn.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\to.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tr.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tt.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tv.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tw.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\tz.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ua.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ug.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\um.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\us.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\uy.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\uz.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\va.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\vc.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ve.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\vg.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\vi.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\vn.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\vu.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\wales.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\wf.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ws.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\ye.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\yt.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\za.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\zm.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\zw.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\icon.ico" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\icon.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\icon.svg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\jm_denis.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\logoazzara.svg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\logoazzara2.svg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\logoproduct.svg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\logoproduct2.svg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\logoproduct3.svg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\logoresponsive.png" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\mlane.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\profile.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\profile2.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\sauro.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\talha.jpg" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\core\bootstrap.min.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\core\jquery.3.2.1.min.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\core\popper.min.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\demo.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\plugin\bootstrap-notify\bootstrap-notify.min.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\plugin\bootstrap-toggle\bootstrap-toggle.min.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\plugin\chart-circle\circles.min.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\plugin\chart.js\chart.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\plugin\datatables\datatables.min.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\plugin\dropzone\dropzone.min.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\plugin\gmaps\gmaps.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\plugin\jquery-scrollbar\jquery.scrollbar.min.js" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\plugin\jquery-ui-1.12.1.custom\jquery-ui.min.js" />
+    <Content Include="Templates\FestavaLive-1.0.0\css\bootstrap-icons.css" />
+    <Content Include="Templates\FestavaLive-1.0.0\css\bootstrap.min.css" />
+    <Content Include="Templates\FestavaLive-1.0.0\css\templatemo-festava-live.css" />
+    <Content Include="Templates\FestavaLive-1.0.0\images\artists\abstral-official-bdlMO9z5yco-unsplash.jpg" />
+    <Content Include="Templates\FestavaLive-1.0.0\images\artists\joecalih-UmTZqmMvQcw-unsplash.jpg" />
+    <Content Include="Templates\FestavaLive-1.0.0\images\artists\soundtrap-rAT6FJ6wltE-unsplash.jpg" />
+    <Content Include="Templates\FestavaLive-1.0.0\images\edward-unsplash-blur.jpg" />
+    <Content Include="Templates\FestavaLive-1.0.0\images\nainoa-shizuru-unsplash-blur.jpg" />
+    <Content Include="Templates\FestavaLive-1.0.0\images\nicholas-green-unsplash-blur.jpg" />
+    <Content Include="Templates\FestavaLive-1.0.0\images\pexels-alexander-suhorucov-6457579.jpg" />
+    <Content Include="Templates\FestavaLive-1.0.0\index.html" />
+    <Content Include="Templates\FestavaLive-1.0.0\js\bootstrap.min.js" />
+    <Content Include="Templates\FestavaLive-1.0.0\js\click-scroll.js" />
+    <Content Include="Templates\FestavaLive-1.0.0\js\custom.js" />
+    <Content Include="Templates\FestavaLive-1.0.0\js\jquery.min.js" />
+    <Content Include="Templates\FestavaLive-1.0.0\js\jquery.sticky.js" />
+    <Content Include="Templates\FestavaLive-1.0.0\ticket.html" />
+    <Content Include="Templates\FestavaLive-1.0.0\video\pexels-2022395.mp4" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\css\bootstrap.min.css" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\css\demo.css" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\css\ready.css" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\css\ready.min.css" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\fonts\line-awesome.svg" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\img\menu.png" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\img\menu2.png" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\img\profile.jpg" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\img\profile2.jpg" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\core\bootstrap.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\core\jquery.3.2.1.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\core\popper.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\demo.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\bootstrap-notify\bootstrap-notify.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\bootstrap-toggle\bootstrap-toggle.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\chart-circle\circles.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\chartist\chartist.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\chartist\plugin\chartist-plugin-tooltip.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\jquery.mapael.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\france_departments.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\france_departments.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\README.txt" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\usa_states.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\usa_states.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\world_countries.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\world_countries.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\world_countries_mercator.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\world_countries_mercator.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\world_countries_miller.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\world_countries_miller.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-scrollbar\jquery.scrollbar.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-ui-1.12.1.custom\jquery-ui.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\ready.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\ready.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\components.html" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\forms.html" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\icons.html" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\index.html" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\notifications.html" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\tables.html" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\typography.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Templates\FestavaLive-1.0.0\fonts\bootstrap-icons.woff" />
+    <Content Include="Templates\FestavaLive-1.0.0\fonts\bootstrap-icons.woff2" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Default\PartialHead.cshtml" />
+    <Content Include="Views\Default\PartialHeader.cshtml" />
+    <Content Include="Views\Default\PartialNavbar.cshtml" />
+    <Content Include="Views\Default\PartialFeature.cshtml" />
+    <Content Include="Views\Default\PartialAbout.cshtml" />
+    <Content Include="Views\Default\PartialMeetArtist.cshtml" />
+    <Content Include="Views\Default\PartialEventSchedule.cshtml" />
+    <Content Include="Views\Default\PartialTicket.cshtml" />
+    <Content Include="Views\Default\PartialContact.cshtml" />
+    <Content Include="Views\Default\PartialFooter.cshtml" />
+    <Content Include="Views\Shared\UILayout.cshtml" />
+    <Content Include="Views\AdminLayout\Index.cshtml" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\.DS_Store" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\css\ready.css.map" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\fonts\line-awesome.eot" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\fonts\line-awesome.ttf" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\fonts\line-awesome.woff" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\fonts\line-awesome.woff2" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_alerts.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_badges.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_buttons.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_cards.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_charts.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_dropdowns.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_inputs.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_maps.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_modals.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_navbars.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_navpills.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_navsearch.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_paginations.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_sliders.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_tables.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\plugins\_chartist.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\plugins\_jqueryscrollbar.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\plugins\_jqueryui.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\plugins\_toggle.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_background.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_components.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_layouts.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_line-awesome.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_outlinefocus.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_plugins.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_responsive.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_typography.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_variables.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\LICENSE" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\README.md" />
+    <Content Include="Views\LoginOut\SignUp.cshtml" />
+    <Content Include="Views\LoginOut\SignIn.cshtml" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\.htaccess" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\bootstrap-grid.css.map" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\bootstrap-grid.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\bootstrap-reboot.css.map" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\bootstrap-reboot.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\bootstrap.css.map" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\bootstrap.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_alert.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_background-variant.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_badge.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_border-radius.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_box-shadow.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_breakpoints.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_buttons.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_caret.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_clearfix.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_float.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_forms.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_gradients.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_grid-framework.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_grid.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_hover.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_image.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_list-group.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_lists.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_nav-divider.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_navbar-align.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_pagination.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_reset-text.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_resize.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_screen-reader.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_size.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_table-row.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_text-emphasis.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_text-hide.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_text-truncate.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_transition.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\mixins\_visibility.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_align.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_background.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_borders.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_clearfix.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_display.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_embed.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_flex.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_float.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_position.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_screenreaders.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_sizing.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_spacing.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_text.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\utilities\_visibility.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_alert.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_badge.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_breadcrumb.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_button-group.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_buttons.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_card.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_carousel.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_close.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_code.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_custom-forms.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_dropdown.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_forms.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_functions.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_grid.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_images.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_input-group.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_jumbotron.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_list-group.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_media.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_mixins.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_modal.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_nav.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_navbar.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_pagination.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_popover.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_print.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_progress.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_reboot.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_root.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_tables.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_tooltip.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_transitions.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_type.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_utilities.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\core\scss\_variables.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\css\azzara.css.map" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\css\azzara.min.css.map" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\css\bootstrap.min.css.map" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\flaticon\Flaticon.eot" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\flaticon\Flaticon.ttf" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\flaticon\Flaticon.woff" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\flaticon\_flaticon.scss" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-brands-400.eot" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-brands-400.ttf" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-brands-400.woff" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-brands-400.woff2" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-regular-400.eot" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-regular-400.ttf" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-regular-400.woff" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-regular-400.woff2" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-solid-900.eot" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-solid-900.ttf" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-solid-900.woff" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\fontawesome\fa-solid-900.woff2" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\summernote\summernote.eot" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\summernote\summernote.ttf" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\fonts\summernote\summernote.woff" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\flags\.DS_Store" />
+    <Content Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\img\logowhite.gvdesign" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Member\Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Templates\azzara-admin-dashboard-template-master\azzara-admin-dashboard-template-master\assets\js\plugin\jquery-ui-touch-punch\" />
+    <Folder Include="Views\UserHome\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202404221839364_mig1.resx">
+      <DependentUpon>202404221839364_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405061723391_mig2.resx">
+      <DependentUpon>202405061723391_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406111436095_mig3.resx">
+      <DependentUpon>202406111436095_mig3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406112038223_mig4.resx">
+      <DependentUpon>202406112038223_mig4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406112151134_mig5.resx">
+      <DependentUpon>202406112151134_mig5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406192338596_mig6.resx">
+      <DependentUpon>202406192338596_mig6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406192340579_mig7.resx">
+      <DependentUpon>202406192340579_mig7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406200113560_mig8.resx">
+      <DependentUpon>202406200113560_mig8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406201430086_mig9.resx">
+      <DependentUpon>202406201430086_mig9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406201439468_mig10.resx">
+      <DependentUpon>202406201439468_mig10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406201623031_mig11.resx">
+      <DependentUpon>202406201623031_mig11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406280651154_AddImageUrlToTicket.resx">
+      <DependentUpon>202406280651154_AddImageUrlToTicket.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8480</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44370/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

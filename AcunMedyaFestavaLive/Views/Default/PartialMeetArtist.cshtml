@@ -1,0 +1,50 @@
+﻿@model List<AcunMedyaFestavaLive.Entities.Artist>
+<section class="artists-section section-padding" id="section_3">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-12 text-center">
+                <h1 class="mb-4">Etkinlik Sanatçılarımız</h1>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-5 col-12">
+                    <div class="artists-thumb">
+                        <div class="artists-image-wrap">
+                            <img src="@item.ImageUrl" style="width:600px;height:350px;"
+                                 class="artists-image img-fluid">
+                        </div>
+
+                        <div class="artists-hover">
+                            <p>
+                                <strong>İsim Soyisim:</strong>
+                                @item.NameSurname
+                            </p>
+
+                            <p>
+                                <strong>Etkinlik Saati:</strong>
+                                @item.Date
+                            </p>
+
+                            <p>
+                                <strong>Etkinlik Türü:</strong>
+                                @item.Description
+                            </p>
+
+                            <hr>
+
+                            <p class="mb-0">
+                                <strong>Etkinlik Açıklama:</strong>
+                                @item.Description2
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+            }
+
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,45 @@
+﻿@model AcunMedyaFestavaLive.Entities.Ticket
+@{
+    ViewBag.Title = "TicketDetail";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@Html.HiddenFor(x=>x.TicketID)
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Biletler</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"> Bilet Detayları</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Başlık: <b>@Model.Title</b>
+                            <br /><br />
+                            Açıklama: <b>@Model.Description</b>
+                            <br /><br />
+                            Ücret: <b>@Model.Price</b>
+                            <br /><br />
+                            Nitelik 1 : <b>@Model.TicketProperty1</b>
+                            <br /><br />
+                            Nitelik 2 : <b>@Model.TicketProperty2</b>
+                            <br /><br />
+                            Nitelik 3 : <b>@Model.TicketProperty3</b>
+                            <br /><br />
+                            Nitelik 4 : <b>@Model.TicketProperty4</b>
+                            <br /><br />
+                            Nitelik 5 : <b>@Model.TicketProperty5</b>
+                            <br /><br />
+                            Nitelik 6 : <b>@Model.TicketProperty6</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

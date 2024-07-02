@@ -1,0 +1,47 @@
+﻿@model List<AcunMedyaFestavaLive.Entities.User>
+@{
+    ViewBag.Title = "UserList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Üyeler</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Üyeler Hakkında</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Üyeler Ekleme-Silme İşlemleri
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Resim</th>
+                                    <th scope="col">Kullanıcı Adı</th>
+                                    <th scope="col">Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.UserID</td>
+                                        <td><img  src="@item.ImageUrl" style="height:50px; width:50px;"/></td>
+                                        <td>@item.UserName</td>
+                                        <td><a href="/Admin/User/DeleteUser/@item.UserID" class="btn btn-danger">Sil</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

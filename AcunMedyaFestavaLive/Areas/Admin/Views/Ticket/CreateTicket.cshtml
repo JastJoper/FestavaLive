@@ -1,0 +1,52 @@
+﻿@model AcunMedyaFestavaLive.Entities.Ticket
+@{
+    Layout = "/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Bilet Bilgileri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Bilet Bilgisi Ekleme Sayfası</div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <label>Bilet Başlığı</label>
+                            @Html.TextAreaFor(x => x.Title, new { @class = "form-control" })
+                            <br />
+                            <label>Bilet Açıklaması</label>
+                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+                            <br />
+                            <label>Bilet Fiyatı</label>
+                            @Html.TextAreaFor(x => x.Price, new { @class = "form-control" })
+                            <br />
+                            <label>Nitelik 1</label>
+                            @Html.TextAreaFor(x => x.TicketProperty1, new { @class = "form-control" })
+                            <br />
+                            <label>Nitelik 2</label>
+                            @Html.TextAreaFor(x => x.TicketProperty2, new { @class = "form-control" })
+                            <br />
+                            <label>Nitelik 3</label>
+                            @Html.TextAreaFor(x => x.TicketProperty3, new { @class = "form-control" })
+                            <br />
+                            <label>BNitelik 4</label>
+                            @Html.TextAreaFor(x => x.TicketProperty4, new { @class = "form-control" })
+                            <br />
+                            <label>Nitelik 5</label>
+                            @Html.TextAreaFor(x => x.TicketProperty5, new { @class = "form-control" })
+                            <br />
+                            <label>Nitelik 6</label>
+                            @Html.TextAreaFor(x => x.TicketProperty6, new { @class = "form-control" })
+                            <br />
+                            <button class="btn btn-primary">Bilet Bilgisini Ekle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

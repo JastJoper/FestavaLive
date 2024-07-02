@@ -1,0 +1,49 @@
+﻿@model List<AcunMedyaFestavaLive.Entities.Message>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Mesajlar</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Gelen Mesaj Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Mesajlar ile ilgili işlemleri aşağıdan yapabilirsiniz
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Gönderen İsim</th>
+                                    <th scope="col">Gönderen Email</th>
+                                    <th scope="col">Mesajı Aç</th>
+                                    <th scope="col">Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.MessageID</td>
+                                        <td>@item.NameSurname</td>
+                                        <td>@item.Email</td>
+                                        <td><a href="/Admin/Message/MessageDetail/@item.MessageID" class="btn btn-warning">Mesajı Aç</a></td>
+                                        <td><a href="/Admin/Message/MessageDelete/@item.MessageID" class="btn btn-danger">Sil</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

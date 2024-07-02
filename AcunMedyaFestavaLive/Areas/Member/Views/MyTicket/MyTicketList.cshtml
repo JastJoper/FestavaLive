@@ -1,0 +1,50 @@
+﻿@model List<AcunMedyaFestavaLive.Areas.Member.Models.UserTicketViewModel>
+@{
+    Layout = "/Areas/Member/Views/Shared/_MemberLayout.cshtml";
+}
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Bilet Bilgileri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Biletlerim</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Aşağıda Ki Tabloda Kendinize Ait biletleri görebilirsiniz.
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Bilet Başlığı</th>
+                                    <th>Bilet Açıklaması</th>
+                                    <th>Bilet Fiyatı</th>
+                                    <th>Detaylar</th>
+                                    <th>İptal Et</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.TicketId</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.Price</td>
+                                        <td><a href="/Member/MyTicket/TicketDetail/@item.TicketId" class="btn btn-info">Detaylar</a></td>
+                                        <td><a href="/Member/MyTicket/MyTicketDelete/@item.TicketId" class="btn btn-success">İptal Et</a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

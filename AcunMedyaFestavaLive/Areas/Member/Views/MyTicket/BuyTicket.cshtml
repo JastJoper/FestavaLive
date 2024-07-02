@@ -1,0 +1,27 @@
+﻿@model AcunMedyaFestavaLive.Entities.Ticket
+
+@{
+    ViewBag.Title = "Bilet Satın Al";
+    Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Bilet Satın Al</h4>
+        <div class="row">
+            <div class="col-md-6">
+                @using (Html.BeginForm("BuyTicket", "MyTicket", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        <label for="TicketID">Bilet Seçin:</label>
+                        @Html.DropDownList("TicketID", (SelectList)ViewBag.Tickets, "-- Bilet Seçin --", new { @class = "form-control" })
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Satın Al</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

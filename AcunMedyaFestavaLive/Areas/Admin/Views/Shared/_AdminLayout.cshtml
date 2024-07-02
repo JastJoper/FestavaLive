@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+@Html.Action("PartialHead", "Layout")
+<body>
+    <div class="wrapper">
+        @Html.Action("PartialNavbar","Layout")
+
+        @Html.Action("PartialSidebar","Layout")
+          
+        <div class="main-panel">
+            @RenderBody()
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://www.themekita.com">
+                                    AdminSayfası
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    Yardım
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://themewagon.com/license/#free-item">
+                                    Lisans
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="copyright ml-auto">
+                        2018, made with <i class="la la-heart heart text-danger"></i> by <a href="http://www.exaygames.com">ExayGames</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    </div>
+   
+</body>
+@Html.Action("PartialScript", "Layout")
+
+</html>

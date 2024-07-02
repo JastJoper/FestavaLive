@@ -1,0 +1,73 @@
+﻿<div class="sidebar">
+    <div class="scrollbar-inner sidebar-wrapper">
+        <div class="user">
+            <div class="photo">
+                <img src="~/Templates/Ready-Bootstrap-Dashboard-master/assets/img/profile2.png" alt="Profil Fotoğrafı">
+            </div>
+            <div class="info">
+                <a class="collapsed" data-toggle="collapse" href="#collapseExample" aria-expanded="false">
+                    <span>
+                        JastJoper
+                        <span class="user-level">@Session["OperationClaimName"]</span>
+                    </span>
+                </a>
+                <div class="collapse" id="collapseExample">
+                    <ul class="nav">
+                        <li>
+                            <a href="#profile">
+                                <span class="link-collapse">Profilim</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#edit">
+                                <span class="link-collapse">Profilimi Düzenle</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Auth/SignOut">
+                                <span class="link-collapse">Çıkış Yap</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="nav">
+            <li class="nav-item">
+                <a href="/Member/Tickets/MyTickets">
+                    <i class="la la-ticket"></i>
+                    <p>Bilet Bilgileri</p>
+                    <span class="badge badge-count"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Member/Tickets/PurchasedTickets">
+                    <i class="la la-ticket"></i>
+                    <p>Satışta ki Biletlerin Listesi</p>
+                    <span class="badge badge-count"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Member/Tickets/PreviousTickets">
+                    <i class="la la-ticket"></i>
+                    <p>Geçmiş Biletlerim</p>
+                    <span class="badge badge-count"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Member/Events/UpcomingEvents">
+                    <i class="la la-calendar"></i>
+                    <p>Gelecek Etkinlikler</p>
+                    <span class="badge badge-count"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Member/Events/AllEvents">
+                    <i class="la la-calendar"></i>
+                    <p>Tüm Etkinlikler</p>
+                    <span class="badge badge-count"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

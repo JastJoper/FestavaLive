@@ -1,0 +1,69 @@
+﻿<div class="sidebar">
+    <div class="scrollbar-inner sidebar-wrapper">
+        <div class="user">
+            <div class="photo">
+                <img src="~/Templates/azzara-admin-dashboard-template-master/assets/img/jm_denis.jpg\">
+            </div>
+            <div class="info">
+                <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                    <span>
+                        @Session["Hüseyin Özbey"]
+                        <span class="user-level">@Session["OperationClaimName"]</span>
+                        <span class="caret"></span>
+                    </span>
+                </a>
+                <div class="clearfix"></div>
+
+                <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+                    <ul class="nav">
+                        <li>
+                            <a href="#profile">
+                                <span class="link-collapse">Profilim</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#edit">
+                                <span class="link-collapse">Profili Düzenle</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#settings">
+                                <span class="link-collapse">Ayarlar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="nav">
+            <li class="nav-item ">
+                <a href="/Admin/Ticket/TicketList/">
+                    <i class="la la-ticket"></i>
+                    <p>Satılan Biletler</p>
+                    <span class="badge badge-count"></span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a href="/Admin/Ticket/PassiveTicketList/">
+                    <i class="la la-ticket"></i>
+                    <p>Geçmiş</p>
+                    <span class="badge badge-count"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Admin/Artist/ArtistList/">
+                    <i class="la la-star"></i>
+                    <p>Sanatçılar</p>
+                    <span class="badge badge-count"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Admin/User/UserList/">
+                    <i class="la la-user"></i>
+                    <p>Kullanıcılar</p>
+                    <span class="badge badge-count"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
